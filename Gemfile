@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "admin-lte-dsl", path: "./vendor_gems/admin_lte_dsl"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
