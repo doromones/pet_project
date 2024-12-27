@@ -2,7 +2,7 @@
   <div class="sidebar-brand">
     <a class='brand-link' href='/dist/pages/'>
       <img
-        src="../../dist/assets/img/AdminLTELogo.png"
+        src="<%= image_url('AdminLTELogo.png') %>"
         alt="AdminLTE Logo"
         class="brand-image opacity-75 shadow"
         />
@@ -19,10 +19,10 @@
         data-accordion="false"
       >
         <li class="nav-item">
-          <a class='nav-link active' href='<% admin_root_url %>'>
+          <%= link_to admin_root_url, class: 'nav-link active' do %>
             <i class="nav-icon bi bi-circle"></i>
             <p>Dashboard v1</p>
-          </a>
+          <% end %>
         </li>
       </ul>
     </nav>
