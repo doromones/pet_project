@@ -1,8 +1,8 @@
 PATH
-  remote: vendor_gems/admin_lte_dsl
+  remote: ../admin_lte_dsl
   specs:
-    admin-lte-dsl (0.1.0)
-      rails (>= 5.0.0)
+    admin_lte_dsl (0.1.0)
+      rails (>= 8.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -361,7 +361,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  admin-lte-dsl!
+  admin_lte_dsl!
   bootsnap
   brakeman
   capybara
