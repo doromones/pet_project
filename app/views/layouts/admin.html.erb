@@ -30,7 +30,16 @@
     <% b.link('Home2', admin_root_url) %>
   <% end %>
 
-  <%= render partial: 'layouts/admin/sidebar' %>
+  <%= admin_lte_sidebar do |b| %>
+    <% b.brand_link { admin_root_path } %>
+    <% b.brand_logo_src { image_url('AdminLTELogo.png') } %>
+    <% b.brand_logo_alt { 'AdminLTE Logo' } %>
+    <% b.brand_name { 'AdminLTE 4' } %>
+
+    <% b.nav_header 'HEADER FIRST' %>
+    <% b.nav_header 'HEADER SECOND' %>
+  <% end %>
+
   <main class="app-main">
     <%= render partial: 'layouts/admin/content_header' %>
     <%= render partial: 'layouts/admin/content' %>
