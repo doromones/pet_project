@@ -43,6 +43,13 @@
     <% b.nav_header 'HEADER SECOND' %>
     <% b.nav_item 'FIRST NAV ITEM', admin_root_url, 'bi-1-circle' %>
     <% b.nav_item 'SECOND NAV ITEM', admin_root_url, 'bi-2-circle' %>
+
+    <% b.nav_tree_view 'TREE VIEW', 'bi-3-circle' do |tw| %>
+      <% tw.nav_item 'TREE VIEW 1', admin_root_url, 'bi-1-circle' %>
+      <% tw.nav_item 'TREE VIEW 3', admin_root_url, 'bi-2-circle' %>
+      <% tw.nav_item 'TREE VIEW 4', admin_root_url, 'bi-4-circle' %>
+      <% tw.nav_item 'TREE VIEW 5', admin_root_url, 'bi-5-circle' %>
+    <% end %>
   <% end %>
 
   <main class="app-main">
