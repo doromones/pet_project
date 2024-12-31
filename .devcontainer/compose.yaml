@@ -6,6 +6,13 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
 
+    networks:
+    - default
+    - caddy
+    labels:
+      caddy: pet-project.local, admin.pet-project.local
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+
     volumes:
     - ../..:/workspaces:cached
 
@@ -38,3 +45,7 @@ services:
 
 volumes:
   postgres-data:
+
+networks:
+  caddy:
+    external: true
