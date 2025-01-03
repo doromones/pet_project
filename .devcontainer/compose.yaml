@@ -14,7 +14,7 @@ services:
       dockerfile: .devcontainer/Dockerfile
 
     volumes:
-    - ../..:/workspaces:cached
+      - ../..:/workspaces:cached
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -25,17 +25,17 @@ services:
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
     depends_on:
-    - selenium
-    - postgres
+      - selenium
+      - postgres
     labels:
-    - "traefik.enable=true"
-    - "traefik.http.routers.pet-project.rule=Host(`pet-project.local`) || Host(`admin.pet-project.local`)"
-    - "traefik.http.services.pet-project.loadbalancer.server.port=3000"
-    - "traefik.http.routers.pet-project.entrypoints=web-secure"
-    - "traefik.http.routers.pet-project.tls=true"
+      - "traefik.enable=true"
+      - "traefik.http.routers.pet-project.rule=Host(`pet-project.local`) || Host(`admin.pet-project.local`)"
+      - "traefik.http.services.pet-project.loadbalancer.server.port=3000"
+      - "traefik.http.routers.pet-project.entrypoints=web-secure"
+      - "traefik.http.routers.pet-project.tls=true"
     networks:
-    - default
-    - traefik-net
+      - default
+      - traefik-net
 
   selenium:
     image: selenium/standalone-chromium
@@ -45,9 +45,9 @@ services:
     image: postgres:16.1
     restart: unless-stopped
     networks:
-    - default
+      - default
     volumes:
-    - postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
