@@ -2,7 +2,7 @@
 <div class="register-box">
   <div class="register-logo">
     <%= link_to admin_root_url do %>
-      <b>AdminLTE</b>
+      <b>Admin</b>LTE
     <% end %>
   </div>
   <div class="card">
@@ -11,7 +11,7 @@
 
       <%= simple_form_for @user, url: registration_path, method: :post do |f| %>
         <div class="input-group mb-3">
-          <%= f.input_field :email_address, class: 'form-control', placeholder: 'Email address' %>
+          <%= f.input_field :email_address, class: 'form-control', placeholder: 'Email' %>
           <div class="input-group-text"><span class="bi bi-person"></span></div>
         </div>
 
