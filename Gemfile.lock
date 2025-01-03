@@ -1,5 +1,7 @@
-PATH
-  remote: ../admin_lte_dsl
+GIT
+  remote: https://github.com/doromones/admin_lte_dsl.git
+  revision: b084b829a3cdc85cecda9edec9bafbea6a92baab
+  branch: feature/navbar
   specs:
     admin_lte_dsl (0.1.0)
       dry-configurable
