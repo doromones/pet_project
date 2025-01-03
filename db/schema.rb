@@ -31,5 +31,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_131911) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
-  add_foreign_key "sessions", "users"
+  add_foreign_key "sessions", "users", on_delete: :cascade
 end
