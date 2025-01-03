@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for(:title) || "Pet Project: Admin panel" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= yield :head %>
+
+  <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+  <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
+
+  <%# Includes all stylesheet files in app/assets/stylesheets %>
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<div class="app-wrapper">
+  <%= admin_lte_navbar do |b| %>
+    <% b.link { link_to('Home', admin_root_url, class: 'nav-link') } %>
+    <% b.link('Home2', admin_root_url) %>
+  <% end %>
+
+  <%= admin_lte_sidebar do |b| %>
+    <% b.brand_link { admin_root_path } %>
+    <% b.brand_logo_src { image_url('AdminLTELogo.png') } %>
+    <% b.brand_logo_alt { 'AdminLTE Logo' } %>
+    <% b.brand_name { 'AdminLTE 4' } %>
+
+    <% b.nav_header 'HEADER FIRST' %>
+    <% b.nav_item 'FIRST NAV ITEM', admin_root_url, 'bi-1-circle' %>
+    <% b.nav_item 'SECOND NAV ITEM', admin_root_url, 'bi-2-circle' %>
+
+    <% b.nav_header 'HEADER SECOND' %>
+    <% b.nav_item 'FIRST NAV ITEM', admin_root_url, 'bi-1-circle' %>
+    <% b.nav_item 'SECOND NAV ITEM', admin_root_url, 'bi-2-circle' %>
+
+    <% b.nav_tree_view 'TREE VIEW', 'bi-3-circle' do |tw| %>
+      <% tw.nav_item 'TREE VIEW 1', admin_root_url, 'bi-1-circle' %>
+      <% tw.nav_item 'TREE VIEW 3', admin_root_url, 'bi-2-circle' %>
+      <% tw.nav_item 'TREE VIEW 4', admin_root_url, 'bi-4-circle' %>
+      <% tw.nav_item 'TREE VIEW 5', admin_root_url, 'bi-5-circle' %>
+    <% end %>
+  <% end %>
+
+  <main class="app-main">
+    <%= render partial: 'layouts/admin/content_header' %>
+    <%= render partial: 'layouts/admin/content' %>
+  </main>
+</div>
+</body>
+</html>

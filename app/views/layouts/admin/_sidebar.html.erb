@@ -1,0 +1,30 @@
+<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+  <div class="sidebar-brand">
+    <a class='brand-link' href='/dist/pages/'>
+      <img
+        src="<%= image_url('AdminLTELogo.png') %>"
+        alt="AdminLTE Logo"
+        class="brand-image opacity-75 shadow"
+        />
+      <span class="brand-text fw-light">AdminLTE 4</span>
+    </a>
+  </div>
+
+  <div class="sidebar-wrapper">
+    <nav class="mt-2">
+      <ul
+        class="nav sidebar-menu flex-column"
+        data-lte-toggle="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <li class="nav-item">
+          <%= link_to admin_root_url, class: 'nav-link active' do %>
+            <i class="nav-icon bi bi-circle"></i>
+            <p>Dashboard v1</p>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
