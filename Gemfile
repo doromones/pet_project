@@ -57,6 +57,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotate", "~> 2.6"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
@@ -66,3 +68,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
