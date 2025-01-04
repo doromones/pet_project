@@ -26,8 +26,8 @@
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 <div class="app-wrapper">
   <%= admin_lte_navbar do |b| %>
-    <% b.link { link_to('Home', admin_root_url, class: 'nav-link') } %>
-    <% b.link('Home2', admin_root_url) %>
+    <% b.nav_item { link_to('Home', admin_root_url, class: 'nav-link') } %>
+    <% b.nav_item('Home2', admin_root_url) %>
   <% end %>
 
   <%= admin_lte_sidebar do |b| %>
