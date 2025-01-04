@@ -29,11 +29,6 @@
   "customizations": {
     "jetbrains": {
       "backend": "IntelliJ",
-      "settings": {
-        "com.intellij:app:BuiltInServerOptions.builtInServerPort": 57588,
-        "com.intellij:app:HttpConfigurable.use_proxy_pac": true,
-        "com.intellij:app:VcsApplicationSettings.commit_from_local_changes": false
-      },
       "plugins": [
         "org.jetbrains.plugins.ruby"
       ]
