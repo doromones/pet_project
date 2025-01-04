@@ -1,0 +1,68 @@
+<body class="login-page bg-body-secondary">
+<div class="login-box">
+
+
+  <div class="login-logo">
+    <%= link_to admin_root_url do %>
+      <b>Admin</b>LTE
+    <% end %>
+  </div>
+
+  <div class="card">
+    <% if flash.present? %>
+      <div class="card-header text-center">
+        <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+        <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+      </div>
+    <% end %>
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+      <%= simple_form_for @user, url: session_path, method: :post do |f| %>
+        <div class="input-group mb-3">
+          <%= f.input_field :email_address, class: 'form-control', placeholder: 'Email', required: true, autofocus: true, autocomplete: "username" %>
+          <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+        </div>
+
+        <div class="input-group mb-3">
+          <%= f.input_field :password, class: 'form-control', placeholder: 'Password', required: true, autocomplete: "current-password", maxlength: 72 %>
+          <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+        </div>
+
+        <div class="row">
+          <div class="col-8">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault"> Remember Me </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+      <% end %>
+
+      <div class="social-auth-links text-center mb-3 d-grid gap-2">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-primary">
+          <i class="bi bi-facebook me-2"></i> Sign in using Facebook
+        </a>
+        <a href="#" class="btn btn-danger">
+          <i class="bi bi-google me-2"></i> Sign in using Google+
+        </a>
+      </div>
+      <!-- /.social-auth-links -->
+      <p class="mb-1">
+        <%= link_to 'I forgot my password', new_password_path %>
+      </p>
+      <p class="mb-0">
+        <%= link_to ' Register a new membership ', new_registration_path, class: 'text-center' %>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+</body>
